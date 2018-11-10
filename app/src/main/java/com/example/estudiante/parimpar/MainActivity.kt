@@ -11,29 +11,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         bntImpar.setOnClickListener({
 
+            var scorrect = 0
+            var sincorrect = 0
+            var aleatorio = (1..10).shuffled().first()
 
-            val aleatorrio = (1..10).shuffled().first()
+            numlabel
 
-            if(aleatorrio % 2 === 0 ){
+            if(aleatorio % 2 === 0 ){
                 //correctos
-                
+                scorrect = scorrect + 1
+                correctos.text = scorrect.toString()
+
             }
             else{
                 //incorrectos
+                sincorrect = sincorrect + 1
+                incorrectos.text = sincorrect.toString()
+
             }
         })
-    }
-
-
-
-    fun sumarCorrectos(){
-        val numCorrect = 0
-        numCorrect = numCorrect++
-    }
-
-    fun sumarIncorrectos(){
-        val numCorrect = 0
-        numCorrect = numCorrect++
     }
 
 }
